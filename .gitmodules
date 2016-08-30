@@ -1,0 +1,12 @@
+[submodule "movie-microservice"]
+	path = movie-microservice
+	url = https://github.com/alanniu99/movie-microservice.git
+[submodule "user-microservice"]
+	path = user-microservice
+	url = https://github.com/alanniu99/user-microservice.git
+[submodule "ui-search"]
+	path = ui-search
+	url = https://github.com/alanniu99/ui-search.git
+[submodule "rating-microservice"]
+	path = rating-microservice
+	url = https://github.com/alanniu99/rating-microservice.git
