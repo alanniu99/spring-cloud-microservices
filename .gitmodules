@@ -10,3 +10,12 @@
 [submodule "rating-microservice"]
 	path = rating-microservice
 	url = https://github.com/alanniu99/rating-microservice.git
+[submodule "discovery-microservice"]
+	path = discovery-microservice
+	url = https://github.com/alanniu99/discovery-microservice.git
+[submodule "config-microservice"]
+	path = config-microservice
+	url = https://github.com/alanniu99/config-microservice.git
+[submodule "api-gateway-microservice"]
+	path = api-gateway-microservice
+	url = https://github.com/alanniu99/api-gateway-microservice.git
