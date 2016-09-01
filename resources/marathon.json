@@ -2,6 +2,63 @@
 	"id": "/movieapps",
 	"groups": [
 		{
+			"id": "database",
+			"apps": [
+				{
+					"id": "/neo4j",
+					"cmd": null,
+					"cpus": 0.2,
+					"mem": 1000,
+					"disk": 0,
+					"instances": 1,
+					"container": {
+						"type": "DOCKER",
+						"volumes": [
+							{
+								"containerPath": "/data",
+								"hostPath": "/home/alan/neo4j/data",
+								"mode": "RW"
+							}
+						],
+						"docker": {
+							"image": "neo4j",
+							"network": "BRIDGE",
+							"portMappings": [
+								{
+									"containerPort": 7474,
+									"protocol": "tcp",
+									"labels": {
+									}
+								},
+								{
+									"containerPort": 7687,
+									"protocol": "tcp",
+									"labels": {
+									}
+								}
+							],
+							"privileged": false,
+							"parameters": [
+								{
+									"key": "net",
+									"value": "microservice"
+								},
+								{
+									"key": "hostname",
+									"value": "neo4jdb"
+								},
+								{
+									"key": "net-alias",
+									"value": "neo4jdb"
+								}
+							],
+							"forcePullImage": false
+						}
+					}
+				}
+			]
+		},
+		{
 			"id": "discover-service",
 			"apps": [
 				{
@@ -23,14 +80,15 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "discovery"
 								}
 							],
 							"portMappings": [
 								{
-									"containerPort": 8761,									
+									"containerPort": 8761,
 									"protocol": "tcp",
 									"name": null
 								}
@@ -69,8 +127,9 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "configServer"
 								}
 							],
@@ -98,7 +157,8 @@
 			"id": "movie-services",
 			"dependencies": [
 				"discover-service",
-				"config-service"
+				"config-service",
+				"database"
 			],
 			"apps": [
 				{
@@ -120,8 +180,9 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "movie"
 								}
 							],
@@ -159,8 +220,9 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "moviesui"
 								}
 							],
@@ -205,15 +267,15 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "rating"
 								}
 							],
 							"portMappings": [
 								{
 									"containerPort": 9004,
-								
 									"protocol": "tcp",
 									"name": null
 								}
@@ -248,14 +310,15 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "user"
 								}
 							],
 							"portMappings": [
 								{
-									"containerPort": 9000,									
+									"containerPort": 9000,
 									"protocol": "tcp",
 									"name": null
 								}
@@ -305,14 +368,15 @@
 								{
 									"key": "net",
 									"value": "microservice"
-								},{
-									"key": "network-alias",
+								},
+								{
+									"key": "net-alias",
 									"value": "gateway"
 								}
 							],
 							"portMappings": [
 								{
-									"containerPort": 10000,								
+									"containerPort": 10000,
 									"protocol": "tcp",
 									"name": null
 								}
