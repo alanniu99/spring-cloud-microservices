@@ -5,7 +5,7 @@
 			"id": "database",
 			"apps": [
 				{
-					"id": "/neo4j",
+					"id": "neo4j",
 					"cmd": null,
 					"cpus": 0.2,
 					"mem": 1000,
