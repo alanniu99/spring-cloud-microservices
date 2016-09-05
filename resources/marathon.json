@@ -111,8 +111,8 @@
 				{
 					"id": "config",
 					"cmd": null,
-					"cpus": 0.5,
-					"mem": 1000,
+					"cpus": 0.2,
+					"mem": 500,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -164,8 +164,8 @@
 				{
 					"id": "movie",
 					"cmd": null,
-					"cpus": 0.5,
-					"mem": 1000,
+					"cpus": 0.2,
+					"mem": 500,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -204,8 +204,8 @@
 				{
 					"id": "moviesui",
 					"cmd": null,
-					"cpus": 0.5,
-					"mem": 1000,
+					"cpus": 0.3,
+					"mem": 500,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -243,10 +243,7 @@
 					"healthChecks": [
 					],
 					"labels": {
-					},
-					"acceptedResourceRoles": [
-						"slave_public"
-					]
+					}
 				},
 				{
 					"id": "rating",
@@ -332,15 +329,12 @@
 					"healthChecks": [
 					],
 					"labels": {
-					},
-					"acceptedResourceRoles": [
-						"slave_public"
-					]
+					}
 				}
 			]
 		},
 		{
-			"id": "api-getway",
+			"id": "api-gateway",
 			"dependencies": [
 				"discover-service",
 				"config-service",
