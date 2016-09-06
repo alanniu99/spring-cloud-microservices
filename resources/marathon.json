@@ -112,7 +112,7 @@
 					"id": "config",
 					"cmd": null,
 					"cpus": 0.2,
-					"mem": 500,
+					"mem": 1000,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -165,7 +165,7 @@
 					"id": "movie",
 					"cmd": null,
 					"cpus": 0.2,
-					"mem": 500,
+					"mem": 1000,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -205,7 +205,7 @@
 					"id": "moviesui",
 					"cmd": null,
 					"cpus": 0.3,
-					"mem": 500,
+					"mem": 1000,
 					"disk": 0,
 					"instances": 1,
 					"container": {
@@ -228,8 +228,7 @@
 							],
 							"portMappings": [
 								{
-									"containerPort": 1111,
-									"hostPort": 1111,
+									"containerPort": 1111,									
 									"protocol": "tcp",
 									"name": null
 								}
